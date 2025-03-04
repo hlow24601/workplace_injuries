@@ -1,5 +1,5 @@
 # workplace_injuries
-This is a work in progress. Updates will be commited periodically!
+This is a work in progress. Updates will be commited periodically.
 
 ## Description of the data source
 This dataset of severe workplace injuries was obtained from U.S. Occupational Safety and Health Administration (OHSA). The OHSA requires all employers to report severe workplace injuries, which is defined as an amputation, hospitalization, or loss of an eye. The data set thus contains all reported severe injuries under federal OHSA jurisdiction. 
