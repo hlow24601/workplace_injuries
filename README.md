@@ -7,6 +7,9 @@ The data was extracted on Feburary 23, 2025, with the data being reported for in
 
 https://www.osha.gov/severe-injury-reports
 
-## Project goals
-1. To examine trends in workplace injuries leading to amputations in the construction industry
-2. As we will be comparing injuries by year, only full calender years will be considered in the analysis. Thus, 2024 data (which only covers incidents up to the month of April) will be excluded. 
+## Project overview
+1. To examine trends in workplace injuries leading to amputations in the construction industry; specifically by a) industry type, b) cause of injury, and c) seasonality
+2. As we will be comparing injuries by year, only full calender years will be considered in the analysis. Thus, 2024 data (which only covers incidents up to the month of April) will be excluded.
+
+## Project dashboard
+A dashboard has been created using Tableau: [Link to tableau public](https://public.tableau.com/views/AmputationsintheConstructionIndustry2015-2023/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
