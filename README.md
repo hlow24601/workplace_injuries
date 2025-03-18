@@ -12,4 +12,4 @@ https://www.osha.gov/severe-injury-reports
 2. As we will be comparing injuries by year, only full calender years will be considered in the analysis. Thus, 2024 data (which only covers incidents up to the month of April) will be excluded.
 
 ## Project dashboard
-A dashboard has been created using Tableau: [Work-related Amputations in the Construction Industry, 2015 - 2023] (https://public.tableau.com/views/AmputationsintheConstructionIndustry2015-2023/Dashboard32?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+A dashboard has been created using Tableau: [Work-related Amputations in the Construction Industry, 2015 - 2023](https://public.tableau.com/views/AmputationsintheConstructionIndustry2015-2023/Dashboard32?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
