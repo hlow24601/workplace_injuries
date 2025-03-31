@@ -10,7 +10,7 @@ event_date,
 EXTRACT (year FROM event_date) AS event_year,
 employer, 
 naics, 
-CASE WHEN naics = '2361%' THEN 'Residential building construction'
+CASE WHEN naics LIKE '2361%' THEN 'Residential building construction'
 WHEN naics LIKE '2362%' THEN 'Nonresidential building construction'
 WHEN naics LIKE '2371%' THEN 'Utility System Construction'
 WHEN naics LIKE '2372%' THEN 'Land Subdivision'
