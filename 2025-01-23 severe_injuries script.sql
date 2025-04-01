@@ -42,7 +42,55 @@ DROP COLUMN amputation,
 DROP COLUMN nature,
 DROP COLUMN nature_title;
 
---)
+-- Create trigger updating amputation records if year of injury in source file severe_injuries is 2024
+CREATE OR REPLACE FUNCTION annual_amputation_update()
+RETURNS TRIGGER $$
+BEGIN
+IF EXTRACT (year FROM NEW.event_date) = 2024 THEN
+INSERT INTO amputations_in_construction (upa,
+event_date,
+cause_code,
+event_year,
+source,
+id,
+cause_of_amputation,
+source_title,
+employer,
+naics,
+naics_title,
+part_of_body,
+part_of_body_title
+)
+VALUES (NEW.upa,
+NEW.event_date, 
+NEW.event,
+EXTRACT(year FROM NEW.event_date),
+NEW.source,
+NEW.id,
+NEW.event_title,
+NEW.source_title,
+NEW.employer,
+NEW.naics,
+CASE WHEN NEW.naics LIKE '2361%' THEN 'Residential building construction'
+WHEN NEW.naics LIKE '2362%' THEN 'Nonresidential building construction'
+WHEN NEW.naics LIKE '2371%' THEN 'Utility System Construction'
+WHEN NEW.naics LIKE '2372%' THEN 'Land Subdivision'
+WHEN NEW.naics LIKE '2373%' THEN 'Highway, Street, and Bridge Construction'
+WHEN NEW.naics LIKE '2379%' THEN 'Other Heavy and Civil engineering Construction'
+WHEN NEW.naics LIKE '2381%' THEN 'Foundation, Structure, and Building Exterior Contractors'
+WHEN NEW.naics LIKE '2382%' THEN 'Building Equipment Contractors'
+WHEN NEW.naics LIKE '2383%' THEN 'Building Finishing Contractors'
+ELSE 'Other Specialty Trade Contractors' END,
+NEW.part_of_body,
+NEW.part_of_body_title
+);
+END IF;
+RETURN NEW;
+
+END;
+$$ LANGUAGE plpgsql;
+
+
 -- Count each cause of amputation by naics
 
 WITH amputation_counts AS ( 
@@ -75,7 +123,6 @@ SELECT *
 FROM amputation_cause
 WHERE cause_rank IN (1, 2, 3, 4, 5)
 ORDER BY naics_title, cause_rank;
-
 
 -- New columns to compare total causes
 ALTER TABLE amputation_cause
