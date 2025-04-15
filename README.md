@@ -30,4 +30,6 @@ The SQL script saved in this project folder accomplishes the following on Postgr
   * Results are ordered by the number of amputations
   * The results of this query formed csv file used to create the Tableau dashboard described in the section above
 
-3. Contains a trigger, annual_amputation_update, that automatically updates amputations_in_construction with updates to the source file by year of incident
+3. Compares YoY change in amputations, customizable by year (e.g. 2022 vs 2023)
+
+4. Contains a trigger, annual_amputation_update, that automatically updates amputations_in_construction with based on updates to the source file by year of incident
