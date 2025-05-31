@@ -23,7 +23,7 @@ This dashboard:
 ## SQL script
 The SQL script saved in this project folder accomplishes the following on Postgre:
 1. Creates table, **amputations_in_construction** from the source data selecting only incidents leading to amputations
-  * Selects only incidates that occured between 2015 - 2023
+  * Selects only incidents that occured between 2015 - 2023
   * Adding the full NAICS name next to each corresponding NAICS code for ease of view when exported as csv
     
 2. Executes a query showing displaying each cause of amputation and the number of amputations each cause was responsible for by each construction sector
